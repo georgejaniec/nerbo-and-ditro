@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+{% extends "layout.html" %}
+
+{% block title %}
+    G.R.A.S.P.S.
+{% endblock %}
+
+{% block main %}
+   
+    <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-5">
+
+                    <!-- A form to build a scenario -->
+                    <h1>Your <a href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                            target="blank">G.R.A.S.P.S.</a></h1>
+                    <form action="/grasps" method="post" style="background-color: #fdffcd">
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px">Topic</span>
+                            <textarea class="form-control" autofocus autocomplete="off" id="yourTopic" name="topic"
+                                aria-label="With textarea" placeholder="What is the main topic you would like to cover?"></textarea>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px"><a
+                                    href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                                    target="blank"><b>Goal</b></a></span>
+                            <textarea class="form-control" autocomplete="off" id="yourGoal" name="goal" aria-label="With textarea"
+                                placeholder="What is the main ambition behind this project? Your goal is..."></textarea>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px"><a
+                                    href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                                    target="blank"><b>Role</b></a></span>
+                            <textarea class="form-control" autocomplete="off" id="yourRole" name="role" aria-label="With textarea"
+                                placeholder="What is the participants' role? Who are they? Scientists, explorers, historians, experts, fans, etc. You are..."></textarea>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px"><a
+                                    href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                                    target="blank"><b>Audience</b></a></span>
+                            <textarea class="form-control" autocomplete="off" id="yourAudience" name="audience" aria-label="With textarea"
+                                placeholder="Who might be your listener/viewer/observer?"></textarea>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px"><a
+                                    href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                                    target="blank"><b>Situation</b></a></span>
+                            <textarea class="form-control" autocomplete="off" id="yourSituation" name="situation" aria-label="With textarea"
+                                placeholder="What are our conditions to perform? The circumstances are..."></textarea>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px"><a
+                                    href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                                    target="blank"><b>Product</b></a></span>
+                            <textarea class="form-control" autocomplete="off" id="yourProduct" name="product" aria-label="With textarea"
+                                placeholder="What is the idea for the final product? Your final product..."></textarea>
+                        </div>
+                   
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text" style="width:95px"><a
+                                    href="https://teachingcommons.unt.edu/teaching-essentials/course-design/grasps-model-meaningful-assessment"
+                                    target="blank"><b>Standards</b></a></span>
+                            <textarea class="form-control" autocomplete="off" id="yourStandards" name="standards" aria-label="With textarea"
+                                placeholder="What are the standards for a successful final project? Is there a chance for differentiation? The standards..."></textarea>
+                        </div>
+                    
+                        <div class="d-grid gap-2 col-6 mx-auto" style="padding:10px">
+                            <button type="submit" class="btn btn-primary">Create Scenario</button>
+                        </div>
+                    </form>
+                    <hr class="d-sm-none">
+                </div>
+                
+            <div class="col-sm-7">
+
+                <!-- Literally and figuratively your final product of work -->
+                <h1>Your WORK</h1>
+               
+                &nbsp;
+                
+                {% for row in data %}
+                
+                &nbsp;
+
+                <!-- Adopted after: https://enmascript.com/articles/2019/10/14/show-and-hide-content-on-click-with-just-html -->
+                <details>
+                    <summary>
+                        <h3 style="background-color:#fdffcd">G.R.A.S.P.S. Topic: {{ row.2 }}</h3>
+                    </summary>
+
+                    <table id="{{ row.0 }}" class="table table-sm table-striped table-hover"
+                        style="max-width: 80%; margin: auto; border-style: groove; border-collapse: collapse; background-color:beige">
+                
+                        <thead class="table-dark">
+                            <th colspan="2" style="text-align: center">G.R.A.S.P.S. FRAMEWORK</th>
+                        </thead>
+              
+                        <tbody>
+                            <tr>
+                                <th id="goal" scope="row" style="width: 20%" onclick="links()"><p>Goal:</p></th>
+                                <td>
+                                    <p>{{ row.4 }}</p>
+                                </td>
+                            </tr>
+                
+                            <tr>
+                                <th id="rol" scope="row" style="width: 20%"><p>Role:</p></th>
+                                <td><p>{{ row.5 }}</p></td>
+                            </tr>
+                
+                            <tr>
+                                <th id="audience" scope="row" style="width: 20%"><p>Audience:</p></th>
+                                <td><p>{{ row.6 }}</p></td>
+                            </tr>
+                
+                            <tr>
+                                <th id="situation" scope="row" style="width: 20%"><p>Situation:</p></th>
+                                <td><p>{{ row.7 }}</p></td>
+                            </tr>
+                
+                            <tr>
+                                <th id="product" scope="row" style="width: 20%"><p>Product:</p></th>
+                                <td><p>{{ row.8 }}</p></td>
+                            </tr>
+                
+                            <tr>
+                                <th id="standards" scope="row" style="width: 20%"><p>Standards:</p></th>
+                                <td><p>{{ row.9 }}</p></td>
+                            </tr>
+               
+                            <tr>
+                                <th id="date" scope="row" style="width: 20%"><p>Date:</p></th>
+                                <td><p>{{ row.3 }}</p></td>
+                            </tr>
+
+                        </tbody>
+            
+                        <tfoot>
+                            <tr>
+                                <td><p><b>Actions:</b></p></td>
+                
+                                <td>
+                                    <!-- 
+                                        Edit G.R.A.S.P.S. Framework  
+                                    -->
+
+                                    <form action="/edit_framework" method="POST">
+                                    
+                                        <!-- The user is asked to confirm the table's ID. -->
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="table_id" name="table_id" autocomplete="off">
+                                            <label for="table_id">Table's ID: {{ row.0 }}. Please, confirm ID below to <b>edit it</b>.</label>
+                                        </div>
+                                    
+                                        <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                                            <button type="submit" class="btn btn-warning">Edit</button>
+                                        </div>
+                                    </form>
+
+                                    <!-- 
+                                        Remove One G.R.A.S.P.S. Framework 
+                                    -->
+                                    
+                                    <form action="/deletePart" method="POST">
+                                        
+                                        <!-- The user is asked to confirm the table's ID. -->
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="t_id" name="t_id" autocomplete="off">
+                                            <label for="t_id">Table's ID: {{ row.0 }}. Please, confirm ID below to <b>remove it</b>.</label>
+                                        </div>
+                                        
+                                        <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                                            <button type="submit" class="btn btn-danger">Remove One</button>
+                                        </div>
+                                    </form>
+
+                                    <!-- 
+                                        Delete All G.R.A.S.P.S. Frameworks 
+                                    -->
+            
+                                    <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                                        <p>Delete All button deletes every work from your database.</p>
+                                        <a href="/deleteAll" class="btn btn-danger" role="button">Delete All</a>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </details>
+                
+                {% endfor %}
+                
+                &nbsp;
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

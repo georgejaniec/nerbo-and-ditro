@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    REGISTER
+{% endblock %}
+
+{% block main %}
+
+    <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <!-- Our documentation to build S.T.E.A.M. scenarios -->
+                    <h1>DOCS</h1>
+                    <p><b>Let's inspect our building blocks!</b></p>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://docs.arduino.cc/" target="_blank">Arduino: documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.raspberrypi.org/documentation/" target="_blank">Raspberry Pi: documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://sdk.sphero.com/?_ga=2.20063739.216345638.1584250429-523031326.1573157840&_gac=1.249823794.1584555165.EAIaIQobChMIqfbE-c-k6AIVBZ6fCh3oSwN7EAAYASAAEgLqs_D_BwE" target="_blank">Sphero RVR: documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://devdocs.io/javascript/" target="_blank">JavaScript</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://botland.store/49-create-a-robot" target="_blank">Botland's Creations</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://pai.technology/products/botzees-robotics-programing-and-augmented-reality" target="_blank">Botzees - Solectric Design</a>
+                        </li>
+
+                    </ul>
+                    <hr class="d-sm-none">
+                </div>
+           
+            <div class="col-sm-8">
+                <h1>REGISTER</h1>
+                <form action="/register" method="post" style="border-style: outset; padding: 12px; background-color: #fdffcd">
+                   
+                    <!-- Provide your username, here while registering -->
+                    <div class="form-floating" style="padding: 5px">
+                        <input type="text" class="form-control" id="yourusername" name="registername" autocomplete="off" autofocus placeholder="...">
+                        <label for="yourusername">Your <b>Username:</b></label>
+                    </div>
+
+                    <!-- Provide your e-mail -->
+                    <div class="form-floating" style="padding: 5px">
+                        <input type="email" class="form-control" id="youremail" name="registermail" aria-describedby="emailHelp" autocomplete="off" placeholder="..." required>
+                        <label for="youremail">Your <b>E-mail address:</b></label>
+                    </div>
+
+                    <!-- Provide unpredictable password -->
+                    <div class="form-floating" style="padding: 5px">
+                        <input type="password" class="form-control" id="yourpassword" name="registerpassword" autocomplete="off" placeholder="...">
+                        <label for="yourpassword">Your <b>unique Password, please do not be predictable here:</b></label>
+                    </div>
+
+                    <!--- Please, confirm it -->
+                    <div class="form-floating" style="padding: 5px">
+                        <input type="password" class="form-control" id="confirmation" name="registerconfirmation" autocomplete="off" placeholder="...">
+                        <label for="confirmation">Please, confirm your <b>unique Password</b>:</label>
+                    </div>
+
+                    <!-- Bootstrap's button -->
+                    <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+            &nbsp;
+        </div>
+    </div>
+
+{% endblock %}

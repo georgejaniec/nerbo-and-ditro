@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 5.1.3 CSS (linked) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   
+    <!-- A stylesheet for the web app -->
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="icon" type="gif" href="/static/favicon.ico">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>{% block title%}{% endblock %} - Final Project CS50x: Nerbo & Ditro</title>
+  
+    <!-- 
+     
+      MESSAGE FLASHING 
+      Documentation: https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/
+      
+    -->
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <h3 class="flashes"></h3>
+        {% for message in messages %}
+          <h3 class="alert alert-success">{{ message }}</h3>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+  </head>
+
+  <body>
+      <div class="jumbotron jumbotron-fluid">
+        
+        <!-- A web app name, logo and short description stored in a container (layout) -->
+        <div class="container" style="margin-top:30px">
+          <div class="row">
+            <div class="col">
+              <h1>NERBO'S & DITRO'S HABITAT</h1>
+              <h2>{{ session["Username"] }} combines Scientia & Humanitas</h2>
+              <h6>Employ <a href="https://steamedu.com">S.T.E.A.M.</a>, so Science, Technology, Engineering, the Arts and Mathematics in your
+              <a href="https://www.ibo.org/programmes/middle-years-programme/curriculum/individuals-and-societies/" target="_blank">Individuals & Societies'</a> world to make it more efficient and attractive.</h6>
+            </div>
+            <div class="col">
+              <div class="images">
+                <a href="/"><img class="logo" src="/static/logo.gif" alt="logo"></a>
+              </div>
+            </div>
+            &nbsp;
+          </div>
+        </div>
+      </div>
+
+      <!-- A web app sticky-top navbar layout -->
+      <nav class="navbar navbar-expand-sm sticky-top bg-dark navbar-dark">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+              
+              <!-- {% if session.User_Id %} -->
+                 
+                <li class="nav-item">
+                  <a class="nav-link" href="/"><button class="btn btn-dark" type="button">N&D</button></a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/samples"><button class="btn btn-dark" type="button">Samples</button></a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/grasps"><button class="btn btn-dark" type="button">G.R.A.S.P.S.</button></a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/criteria"><button class="btn btn-dark" type="button">Criteria</button></a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/gallery"><button class="btn btn-dark" type="button">Gallery</button></a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout"><button class="btn btn-dark" type="button">Log Out</button></a>
+                </li>
+               
+              <!-- {% else %} -->
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/register"><button class="btn btn-dark" type="button">Register</button></a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/login"><button class="btn btn-dark" type="button">Log In</button></a>
+                </li>
+
+              <!-- {% endif %} -->
+          
+          </ul>
+        </div>  
+      </nav>
+
+      {% block main %}{% endblock %}
+
+      <!-- A web app footer layout -->
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <p class="foot"><b>Nerbo & Ditro</b> web app has been built with great delight as the final project for <a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x" target="blank"><b>the CS50x Harvard University course</b></a>.</p> 
+        <p class="foot">Made by <a href="https://pl.linkedin.com/in/jerzy-george-janiec-22742170" target="blank"><b>Jerzy George Janiec</b></a> (2022).</p>
+      </div>
+  </body>
+</html>

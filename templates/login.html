@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+{% extends 'layout.html' %}
+
+{% block title%}
+    LOGIN
+{% endblock %} 
+
+{% block main %}
+
+    <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-4" style="padding: 5px">
+                   
+                    <!-- Documentation -->
+                    <h1>DOCS</h1>
+                    <p><b>Let's double-check them!</b></p>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://docs.arduino.cc/" target="blank">Arduino: documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.raspberrypi.org/documentation/" target="blank">Raspberry Pi: documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://sdk.sphero.com/?_ga=2.20063739.216345638.1584250429-523031326.1573157840&_gac=1.249823794.1584555165.EAIaIQobChMIqfbE-c-k6AIVBZ6fCh3oSwN7EAAYASAAEgLqs_D_BwE" target="_blank">Sphero RVR: documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://devdocs.io/javascript/" target="blank">JavaScript</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://botland.store/49-create-a-robot" target="blank">Botland's Creations</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://pai.technology/products/botzees-robotics-programing-and-augmented-reality" target="blank">Botzees - Solectric Design</a>
+                        </li>
+                    </ul>
+                    <hr class="d-sm-none">
+                </div>
+            <div class="col-sm-8">
+               
+                <!--- Log in form for the web app -->
+                <h1>LOG IN</h1>
+                <form action="/login" method="post" style="border-style: outset; padding: 12px; background-color: #fdffcd">
+                    <div class="form-floating" style="padding: 5px">
+                      
+                        <!-- Provide your username -->
+                        <input autocomplete="off" autofocus type="text" class="form-control" id="logusername" name="username" placeholder="Username">
+                        <label for="logusername">Your <b>Username:</b></label>
+                    </div>
+
+                    <!-- Provide your password -->
+                    <div class="form-floating" style="padding: 5px">
+                        <input type="password" class="form-control" id="logpassword" name="password" placeholder="Hopefully, you are not predictable, here...">
+                        <label for="logpassword">Your <b>Password</b>:</label>
+                    </div>
+
+                    <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

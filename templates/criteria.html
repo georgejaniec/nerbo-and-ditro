@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    CRITERIA
+{% endblock %}
+
+{% block main %}
+
+    <script>
+        
+        /*
+        
+            STRANDS A
+
+        */
+
+        function neitherPowerA() {
+            
+            // This function disables the strands A after choosing a checkbox - neither.
+            // Variables A
+            sA1 = document.getElementById("inlineCheckboxA1");
+            sA2 = document.getElementById("inlineCheckboxA2");
+            sA3 = document.getElementById("inlineCheckboxA3");
+            textA = document.getElementById("contentA");
+            table = document.getElementById("knowingU");
+
+            // Conditions A
+            if (sA3.checked) {
+                sA1.disabled = true;
+                sA2.disabled = true;
+                textA.disabled = true;
+            }
+            else if (!sA3.checked) {
+                sA1.disabled = false;
+                sA2.disabled = false;
+                textA.disabled = false;
+            }
+        }
+
+        function optionA() {
+            
+            // This function disables a checkbox neither after choosing the strands' A checkboxes.
+            // Moreover, a textbox is disabled if strand 1 is chosen. It does not contain information... 
+            // ...about our content. 
+
+            // Variables A
+            sA1 = document.getElementById("inlineCheckboxA1");
+            sA2 = document.getElementById("inlineCheckboxA2");
+            sA3 = document.getElementById("inlineCheckboxA3");
+            textA = document.getElementById("contentA");
+
+            // Conditions A
+            if (sA2.checked) {
+                sA3.disabled = true;
+                textA.disabled = false;
+            }
+            else if (sA1.checked) {
+                sA3.disabled = true;
+                textA.disabled = true;
+            }
+            else if (!sA2.checked) {
+                sA3.disabled = false;
+                textA.disabled = false;
+            }
+            else if (!sA1.checked) {
+                sA3.disabled = false;
+                textA.disabled = false;
+            }
+        }
+
+        /*
+            
+            STRANDS B
+    
+        */
+        
+        function neitherPowerB() {
+            
+            // This function disables the strands B after choosing a checkbox - neither.
+            // Variables B
+            sB1 = document.getElementById("inlineCheckboxB1");
+            sB2 = document.getElementById("inlineCheckboxB2");
+            sB3 = document.getElementById("inlineCheckboxB3");
+            sB4 = document.getElementById("inlineCheckboxB4");
+            sB5 = document.getElementById("inlineCheckboxB5");
+            textB = document.getElementById("methods");
+
+            // Conditions B
+            if (sB5.checked) {
+                sB1.disabled = true;
+                sB2.disabled = true;
+                sB3.disabled = true;
+                sB4.disabled = true;
+                textB.disabled = true;
+            }
+            else if (!sB5.checked) {
+                sB1.disabled = false;
+                sB2.disabled = false;
+                sB3.disabled = false;
+                sB4.disabled = false;
+                textB.disabled = false;
+            }
+        }
+
+        function optionB() {
+            
+            // This function disables a checkbox neither after choosing the strands' B checkbox.
+            // Moreover, a textbox is disabled if strands 1, 2 and 4 are chosen. These do not contain information...
+            // ...on our methods.
+
+            // Variables B
+            sB1 = document.getElementById("inlineCheckboxB1");
+            sB2 = document.getElementById("inlineCheckboxB2");
+            sB3 = document.getElementById("inlineCheckboxB3");
+            sB4 = document.getElementById("inlineCheckboxB4");
+            sB5 = document.getElementById("inlineCheckboxB5");
+            textB = document.getElementById("methods");
+
+            // Conditions B
+            if (sB3.checked) {
+                sB5.disabled = true;
+                textB.disabled = false;
+            }
+            else if (sB1.checked || sB2.checked || sB4.checked || sB5.checked) {
+                sB5.disabled = true;
+                textB.disabled = true;
+            }
+            else if (!sB3.checked) {
+                sB5.disabled = false;
+                textB.disabled = false;
+            }
+            else if (!sB1.checked || !sB2.checked || !sB4.checked || !sB5.checked) {
+                sB5.disabled = false;
+                textB.disabled = false;
+            }
+        }
+
+        /*
+            
+            STRANDS C
+    
+        */
+        
+        function neitherPowerC() {
+            
+            // This function disables the strands C after choosing a checkbox - neither.
+            // Variables C
+            sC1 = document.getElementById("inlineCheckboxC1");
+            sC2 = document.getElementById("inlineCheckboxC2");
+            sC3 = document.getElementById("inlineCheckboxC3");
+            sC4 = document.getElementById("inlineCheckboxC4");
+
+            // Conditions C
+            if (sC4.checked) {
+                sC1.disabled = true;
+                sC2.disabled = true;
+                sC3.disabled = true;
+            }
+            else if (!sC4.checked) {
+                sC1.disabled = false;
+                sC2.disabled = false;
+                sC3.disabled = false;
+            }
+        }
+        
+        function optionC() {
+            
+            // This function disables a checkbox neither after choosing the strands' C checkboxes.
+            // Variables C
+            sC1 = document.getElementById("inlineCheckboxC1");
+            sC2 = document.getElementById("inlineCheckboxC2");
+            sC3 = document.getElementById("inlineCheckboxC3");
+            sC4 = document.getElementById("inlineCheckboxC4");
+
+            // Conditions C
+            if (sC1.checked || sC2.checked || sC3.checked) {
+                sC4.disabled = true;
+            }
+            else if (!sC1.checked || !sC2.checked || !sC3.checked) {
+                sC4.disabled = false;
+            }
+        }
+
+        /*
+            
+            STRANDS D
+    
+        */
+        
+        function neitherPowerD() {
+            
+            // This function disables the strands D after choosing a checkbox - neither.
+            // Variables D
+            sD1 = document.getElementById("inlineCheckboxD1");
+            sD2 = document.getElementById("inlineCheckboxD2");
+            sD3 = document.getElementById("inlineCheckboxD3");
+            sD4 = document.getElementById("inlineCheckboxD4");
+            sD5 = document.getElementById("inlineCheckboxD5");
+            textD = document.getElementById("identify");
+
+            // Conditions D
+            if (sD5.checked) {
+                sD1.disabled = true;
+                sD2.disabled = true;
+                sD3.disabled = true;
+                sD4.disabled = true;
+                textD.disabled = true;
+            }
+            else if (!sD5.checked) {
+                sD1.disabled = false;
+                sD2.disabled = false;
+                sD3.disabled = false;
+                sD4.disabled = false;
+                textD.disabled = false;
+            }
+        }
+
+        function optionD() {
+            
+            // This function disables a checkbox neither after choosing the strands' D checkboxes.
+            // Moreover, a textbox is disabled if strands 2, 3 and 4 are chosen. These do not contain information...
+            // ...on our ideas, events, visual argumentation or argumentation, etc.
+
+            // Variables D
+            sD1 = document.getElementById("inlineCheckboxD1");
+            sD2 = document.getElementById("inlineCheckboxD2");
+            sD3 = document.getElementById("inlineCheckboxD3");
+            sD4 = document.getElementById("inlineCheckboxD4");
+            sD5 = document.getElementById("inlineCheckboxD5");
+            textD = document.getElementById("identify");
+
+            // Conditions D
+            if (sD1.checked) {
+                sD5.disabled = true;
+                textD.disabled = false;
+            }
+            else if (sD2.checked || sD3.checked || sD4.checked) {
+                sD5.disabled = true;
+                textD.disabled = true;
+            }
+            else if (!sD1.checked) {
+                sD5.disabled = false;
+                textD.disabled = false;
+            }
+            else if (!sD2.checked || !sD3.checked || !sD4.checked) {
+                sD5.disabled = false;
+                textD.disabled = false;
+            }
+        }
+
+    </script>
+
+    <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <!-- A place for your criteria to evaluate the work -->
+                    <h1>Your CRITERIA</h1>
+                    <form class="MYP" action="/criteria" method="post" style="background-color: #fdffcd">
+                        <hr>
+                        
+                        <!-- The user needs to select the Middle Years Programme Grade -->
+                        <p style="padding-top: 10px; padding-bottom: 10px"><b>Firstly, select the Middle Years Programme Grade:</b></p>
+                        <select class="form-select form-select-lg mb-3" id="mypYears" name="numyears"
+                            style="padding-top: 10px; padding-bottom: 10px">
+                            <option selected disabled>Middle Years Programme</option>
+                            {% for year in years %}
+                            <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                        <hr>
+                        
+                        <!-- The user needs to select the Middle Years Programme strands for criterion A: Knowing and Understanding -->
+                        <p style="padding-top: 10px; padding-bottom: 10px"><b>Secondly, check Criterion's A - Knowing and Understanding -
+                                strand/-s you would like to evaluate:</b></p>
+                        <details>
+                            <summary><b>A: Knowing and Understanding</b> assesses your skillfulness to... (one click)</summary>
+                            <ul>
+                                <li>(One) <em>use wide range of terminology in context</em> and</li>
+                                <li>(Two) <em>demonstrate knowledge and understanding of subject-specific content and concepts, using
+                                        descriptions,
+                                        explanations and examples</em>.</li>
+                            </ul>
+                        </details>
+                       
+                        <!-- Strand A -->
+                        <div id="strandA" style="padding-top: 10px; padding-bottom: 10px">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxA1" name="a1" value="A1" onclick="optionA()">
+                                <label class="form-check-label" for="inlineCheckboxA1">One</label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxA2" name="a2" value="A2" onclick="optionA()">
+                                <label class="form-check-label" for="inlineCheckboxA2">Two</label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxA3" name="a3" value="neither" onclick="neitherPowerA()">
+                                <label class="form-check-label" for="inlineCheckboxA3">Neither</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group" style="padding-top: 10px; padding-bottom: 10px">
+                            <span class="input-group-text">A: Content</span>
+                            <textarea autocomplete="off" class="form-control" aria-label="With textarea" id="contentA" name="ContentA"
+                                placeholder="What is your content? (Feel free to edit this message!)"></textarea>
+                        </div>
+                        <hr>
+                        
+                        <!-- The user needs to select one Key Concept -->
+                        <p style="padding:10px"><b>Then, select Your ONE Key Concept (required):</b></p>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="keyConcept" name="KeyConcept">
+                            <option selected disabled>Key Concepts for I&S</option>
+                            {% for concepts in keyconcepts%}
+                            <option value="{{ concepts }}">{{ concepts }}</option>
+                            {% endfor %}
+                        </select>
+                        <hr>
+                        
+                        <!-- The user needs to select Related Concepts (suggested two as the max) -->
+                        <p style="padding:10px"><b>Of course, choose your ONE Related Concept:</b></p>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="relatedConcepts" name="rc">
+                            <option selected disabled>Related Concepts for I&S</option>
+                            {% for concept in relatedconcepts%}
+                            <option value="{{ concept }}">{{ concept }}</option>
+                            {% endfor %}
+                        </select>      
+                        <hr>
+                        
+                        <!-- The user needs to select the Middle Years Programme strands for criterion B: Investigating -->
+                        <p style="padding:10px"><b>Please, check Criterion's B - Investigating - strand/-s:</b></p>
+                        <details>
+                            <summary><b>B: Investigating</b> assesses your skillfulness to (one click)</summary>
+                            <ul>
+                                <li>(One) <em>formulate a clear and focused research question and justify its relevance</em>,</li>
+                                <li>(Two) <em>formulate and follow an
+                                        action plan to research the question</em>,</li>
+                                <li>(Three) <em>use research methods to collect and record appropriate, varied
+                                        and relevant information</em> and</li>
+                                <li>(Four) <em>evaluate the process and results of your investigation</em>.</li>
+                            </ul>
+                        </details>
+                        &nbsp;
+                        
+                        <!-- Strand B -->
+                        <div id="strandB" name="StrandB">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxB1" name="b1" value="B1" onclick="optionB()">
+                                <label class="form-check-label" for="inlineCheckboxB1">One</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxB2" name="b2" value="B2" onclick="optionB()">
+                                <label class="form-check-label" for="inlineCheckboxB2">Two</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxB3" name="b3" value="B3" onclick="optionB()">
+                                <label class="form-check-label" for="inlineCheckboxB3">Three</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxB4" name="b4" value="B4" onclick="optionB()">
+                                <label class="form-check-label" for="inlineCheckboxB4">Four</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxB5" name="b5" value="none" onclick="neitherPowerB()">
+                                <label class="form-check-label" for="inlineCheckboxB5">None</label>
+                            </div>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text">B: Methods</span>
+                            <textarea class="form-control" autocomplete="off" aria-label="With textarea" id="methods" name="Methods"
+                                placeholder="What methods to collect information would you like to mention in criterion B? (Feel free to edit this message!)"></textarea>
+                        </div>
+                        <hr>
+                        
+                        <!-- The user needs to select the Middle Years Programme strands for criterion C: Communicating -->
+                        <p style="padding:5px"><b>Do not forget about Criterion's C - Communicating - strand/-s:</b></p>
+                        <details>
+                            <summary><b>C: Communicating</b> assesses your skillfulness to... (one click)</summary>
+                            <ul>
+                                <li>(One) <em>communicate information and ideas considering style, audience and purpose</em>,</li>
+                                <li>(Two) <em>structure information
+                                        and ideas in appropriate formats</em> and</li>
+                                <li>(Three) <em>document sources of information using recognized
+                                        conventions</em>.</li>
+                            </ul>
+                        </details>
+                        &nbsp;
+                        
+                        <!-- Strand C -->
+                        <div id="strandC" name="StrandC">
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxC1" name="c1" value="C1" onclick="optionC()">
+                                <label class="form-check-label" for="inlineCheckboxC1">One</label>
+                            </div>
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxC2" name="c2" value="C2" onclick="optionC()">
+                                <label class="form-check-label" for="inlineCheckboxC2">Two</label>
+                            </div>
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxC3" name="c3" value="C3" onclick="optionC()">
+                                <label class="form-check-label" for="inlineCheckboxC3">Three</label>
+                            </div>
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxC4" name="c4" value="none" onclick="neitherPowerC()">
+                                <label class="form-check-label" for="inlineCheckboxC4">None</label>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <!-- The user needs to select the Middle Years Programme strands for criterion D: Thinking critically -->
+                        <p style="padding:10px"><b>Decide on Criterion's D - Thinking critically - strand/-s:</b></p>
+                        <details>
+                            <summary><b>D: Thinking critically</b> assesses your skillfulness to... (one click)</summary>
+                            <ul>
+                                <li>(One) <em>discuss concepts, issues, models, visual representations and theories</em>,</li>
+                                <li>(Two) <em>sythesize information to
+                                        make valid and well-supported arguments</em>,</li>
+                                <li>(Three) <em>analyze and evaluate sources / data considering OPVL</em>
+                                    and</li>
+                                <li>(Four) <em>interpret different perspectives and their implications</em>.</li>
+                            </ul>
+                        </details>
+                        &nbsp;
+                        
+                        <!-- Strand D -->
+                        <div id="strandD" name="StrandD">
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxD1" name="d1" value="D1" onclick="optionD()">
+                                <label class="form-check-label" for="inlineCheckboxD1">One</label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxD2" name="d2" value="D2" onclick="optionD()">
+                                <label class="form-check-label" for="inlineCheckboxD2">Two</label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxD3" name="d3" value="D3" onclick="optionD()">
+                                <label class="form-check-label" for="inlineCheckboxD3">Three</label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxD4" name="d4" value="D4" onclick="optionD()">
+                                <label class="form-check-label" for="inlineCheckboxD4">Four</label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline" style="padding:5px">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckboxD5" name="d5" value="none" onclick="neitherPowerD()">
+                                <label class="form-check-label" for="inlineCheckboxD5">None</label>
+                            </div>
+                        </div>
+                    
+                        <div class="input-group" style="padding:10px">
+                            <span class="input-group-text">D: Identify</span>
+                            <textarea class="form-control" autocomplete="off" id="identify" name="Identify" aria-label="With textarea"
+                                placeholder="Please, specify ideas, events, visual representation or arguments. (Feel free to edit this message!)"></textarea>
+                        </div>
+
+                        <hr>
+                        
+                        <!-- The user may want to select the topic linking it with the G.R.A.S.P.S. scenario(s): -->
+                        <p style="padding:10px"><b>And lastly, you may think of linking the right Criteria to G.R.A.S.P.S. scenario (it's not a requirement):</b></p>
+                        
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="graspsTopic" name="graspsTopic">
+                            <option selected disabled>G.R.A.S.P.S. scenarios</option>
+                            {% for t in graspyT %}
+                                <option>{{ t.0 }}</option>
+                            {% endfor %}
+                        </select>
+
+                        &nbsp;
+
+                        <p style="padding:10px"><b>Just in case, a reminder on the G.R.A.S.P.S.' scenarios below:</b></p>
+                        
+                        {% for reminder in graspyT %}
+                        <details>
+                            <summary><b>Topic:</b> <em>{{ reminder.0 }}</em></summary>
+                            <ul>
+                                <li><b>Goal:</b> {{ reminder.1 }}.</li>
+                                <li><b>Role:</b> {{ reminder.2 }}.</li>
+                                <li><b>Audience:</b> {{ reminder.3 }}.</li>
+                                <li><b>Situation:</b> {{ reminder.4 }}.</li>
+                                <li><b>Product:</b> {{ reminder.5 }}.</li>
+                                <li><b>Standards:</b> {{ reminder.6 }}.</li>
+                            </ul>
+                        </details>
+                        {% endfor %}
+                
+                        <!-- Submit the form: -->
+                        <hr>
+                        <p style="padding:10px"><b>Once ready:</b></p>
+                        <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                            <button type="submit" class="btn btn-primary">Create Assessment Framework</button>
+                        </div>
+                        <hr>
+
+                    </form>
+                </div>
+    
+            <div class="col-sm-6">
+                <h1>Your WORK</h1>
+                
+                {% for strands in dataC %}
+                
+                &nbsp;
+                
+                <details>
+               
+                    <summary>
+                        <h3 style="background-color:#fdffcd">CRITERIA No. {{ strands.25 }} {{ strands.24 }}</h3>
+                        <h4>{{ strands.1 }}</h4>
+                    </summary>
+                
+                    <table id="knowingU" class="table table-sm table-bordered table-striped table-hover"
+                        style="max-width: 80%; margin: auto; border-style: groove; border-collapse: collapse; background-color:lightgoldenrodyellow">
+                
+                        <thead class="table-dark" style="text-align: center">
+                
+                            <th>CRITERION A</th>
+                
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table table-bordered style="max-width: 70%; margin: auto; text-align:center">
+                                    
+                                    {% if strands.1 == "Year one, so Grade 6" %}    
+                                        {% if strands.2 or strands.3 %}
+
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ aG6.0 }}</p>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG6.1) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG6.6) and aG6.6|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG6.2) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG6.7) and aG6.7|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG6.3) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG6.8) and aG6.8|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG6.4) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG6.9) and aG6.9|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+
+                                    {% elif strands.1 == "Year two, so Grade 7" or strands.1 == "Year three, so Grade 8" %}   
+                                        {% if strands.2 or strands.3 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ aG7n8.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG7n8.1) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG7n8.6) and aG7n8.6|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG7n8.2) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG7n8.7) and aG7n8.7|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG7n8.3) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG7n8.8) and aG7n8.8|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG7n8.4) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG7n8.9) and aG7n8.9|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+
+                                    {% elif strands.1 == "Year four, so Grade 9" or strands.1 == "Year five, so Grade 10" %}  
+                                        {% if strands.2 or strands.3 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ aG9n10.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG9n10.1) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG9n10.6) and aG9n10.6|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG9n10.2) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG9n10.7) and aG9n10.7|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG9n10.3) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG9n10.8) and aG9n10.8|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.2 and strands.2|replace(strands.2, aG9n10.4) or '' }}</p>
+                                                <p>{{ strands.3 and strands.3|replace(strands.3, aG9n10.9) and aG9n10.9|replace('contentsA', strands.5) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+
+                                    {% else %}
+                                        <p>This MYP Year is not assessed. Please consider removing this entry to free space for
+                                        another great work.</p>
+                                        
+                                    {% endif %}
+
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                
+                    </table>
+                
+                    <table id="investigating" class="table table-sm table-bordered table-striped table-hover"
+                        style="max-width: 80%; margin: auto; border-style: groove; border-collapse: collapse; background-color:floralwhite">
+                
+                        <thead class="table-dark" style="text-align: center">
+                
+                            <th>CRITERION B</th>
+                
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="max-width: 70%; margin: auto; text-align:center">
+                                    
+                                    {% if strands.1 == "Year one, so Grade 6" %}
+                                        {% if strands.8 or strands.9 or strands.10 or strands.11 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ bG6.0 }}</p>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>                                               
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG6.1) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG6.6) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG6.11) and bG6.6|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG6.16) or '' }}</p>                                               
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG6.2) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG6.7) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG6.12) and bG6.12|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG6.17) or '' }}</p>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG6.3) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG6.8) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG6.13) and bG6.13|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG6.18) or '' }}</p>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG6.4) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG6.9) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG6.14) and bG6.14|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG6.19) or '' }}</p>
+                                            </td>
+                                        </tr>
+
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+
+                                    {% elif strands.1 == "Year two, so Grade 7" or strands.1 == "Year three, so Grade 8" %}
+                                        {% if strands.8 or strands.9 or strands.10 or strands.11 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ bG7n8.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG7n8.1) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG7n8.6) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG7n8.11) and bG7n8.11|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG7n8.16) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG7n8.2) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG7n8.7) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG7n8.12) and bG7n8.12|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG7n8.17) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG7n8.3) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG7n8.8) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG7n8.13) and bG7n8.13|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG7n8.18) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG7n8.4) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG7n8.9) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG7n8.14) and bG7n8.14|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG7n8.19) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% elif strands.1 == "Year four, so Grade 9" or strands.1 == "Year five, so Grade 10" %}
+                                        {% if strands.8 or strands.9 or strands.10 or strands.11 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ bG6.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG9n10.1) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG9n10.6) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG9n10.11) and bG9n10.11|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG9n10.16) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG9n10.2) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG9n10.7) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG9n10.12) and bG9n10.12|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG9n10.17) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG9n10.3) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG9n10.8) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG9n10.13) and bG9n10.13|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG9n10.18) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.8 and strands.8|replace(strands.8, bG9n10.4) or '' }}</p>
+                                                <p>{{ strands.9 and strands.9|replace(strands.9, bG9n10.9) or '' }}</p>
+                                                <p>{{ strands.10 and strands.10|replace(strands.10, bG9n10.14) and bG9n10.14|replace('methodsB', strands.13) or '' }}</p>
+                                                <p>{{ strands.11 and strands.11|replace(strands.11, bG9n10.19) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% else %}
+                                        <p>This MYP Year is not assessed. Please consider removing this entry to free space for
+                                        another great work.</p>
+                                    
+                                    {% endif %}
+
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <table id="communicating" class="table table-sm table-bordered table-striped table-hover"
+                        style="max-width: 80%; margin: auto; border-style: groove; border-collapse: collapse; background-color:lightyellow">
+                
+                        <thead class="table-dark" style="text-align: center">
+                
+                            <th>CRITERION C</th>
+                
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="max-width: 70%; margin: auto; text-align:center">
+                                        
+                                    {% if strands.1 == "Year one, so Grade 6" %}
+                                        {% if strands.14 or strands.15 or strands.16 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>0:</td>
+                                            <td><p>{{ cG6.0 }}</p></td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td> 
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG6.1) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG6.6) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG6.11) or '' }}</p>                                                                                           
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG6.2) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG6.7) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG6.12) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG6.3) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG6.8) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG6.13) or '' }}</p>
+                                            </td>
+                                        </tr>                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG6.4) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG6.9) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG6.14) or '' }}</p>
+                                            </td>
+                                        </tr>
+
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                            
+                                    {% elif strands.1 == "Year two, so Grade 7" or strands.1 == "Year three, so Grade 8" %}
+                                        {% if strands.14 or strands.15 or strands.16 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ cG7n8.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG7n8.1) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG7n8.6) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG7n8.11) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG7n8.2) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG7n8.7) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG7n8.12) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG7n8.3) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG7n8.8) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG7n8.13) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG7n8.4) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG7n8.9) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG7n8.14) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% elif strands.1 == "Year four, so Grade 9" or strands.1 == "Year five, so Grade 10" %}
+                                        {% if strands.14 or strands.15 or strands.16 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ cG6.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG9n10.1) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG9n10.6) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG9n10.11) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG9n10.2) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG9n10.7) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG9n10.12) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG9n10.3) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG9n10.8) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG9n10.13) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.14 and strands.14|replace(strands.14, cG9n10.4) or '' }}</p>
+                                                <p>{{ strands.15 and strands.15|replace(strands.15, cG9n10.9) or '' }}</p>
+                                                <p>{{ strands.16 and strands.16|replace(strands.16, cG9n10.14) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% else %}
+                                        <p>This MYP Year is not assessed. Please consider removing this entry to free space for
+                                        another great work.</p>
+                                    
+                                    {% endif %}
+                                    
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <table id="thinkingCritically" class="table table-sm table-bordered table-striped table-hover"
+                        style="max-width: 80%; margin: auto; border-style: groove; border-collapse: collapse; background-color:floralwhi">
+                
+                        <thead class="table-dark" style="text-align: center">
+                
+                            <th>CRITERION D</th>
+                
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="max-width: 70%; margin: auto; text-align:center">
+                            
+                                    {% if strands.1 == "Year one, so Grade 6" %}
+                                        {% if strands.18 or strands.19 or strands.20 or strands.21 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>0:</td>
+                                            <td><p>{{ dG6.0 }}</p></td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td> 
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG6.1) and dG6.1|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG6.6) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG6.11) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG6.16) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG6.2) and dG6.2|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG6.7) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG6.12) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG6.17) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG6.3) and dG6.3|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG6.8) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG6.13) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG6.18) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG6.4) and dG6.4|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG6.9) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG6.14) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG6.19) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% elif strands.1 == "Year two, so Grade 7" or strands.1 == "Year three, so Grade 8" %}
+                                        {% if strands.18 or strands.19 or strands.20 or strands.21 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ dG7n8.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG7n8.1) and dG7n8.1|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG7n8.6) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG7n8.11) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG7n8.16) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG7n8.2) and dG7n8.2|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG7n8.7) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG7n8.12) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG7n8.17) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG7n8.3) and dG7n8.3|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG7n8.8) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG7n8.13) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG7n8.18) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG7n8.4) and dG7n8.4|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG7n8.9) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG7n8.14) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG7n8.19) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% elif strands.1 == "Year four, so Grade 9" or strands.1 == "Year five, so Grade 10" %}
+                                        {% if strands.18 or strands.19 or strands.20 or strands.21 %}
+                                        
+                                        <tr>
+                                            <th>Achievement Levels</th>
+                                            <th>Strands</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>0:</td>
+                                            <td>
+                                                <p>{{ dG9n10.0 }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>1-2:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG9n10.1) and dG9n10.1|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG9n10.6) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG9n10.11) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG9n10.16) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>3-4:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG9n10.2) and dG9n10.2|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG9n10.7) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG9n10.12) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG9n10.17) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>5-6:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG9n10.3) and dG9n10.3|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG9n10.8) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG9n10.13) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG9n10.18) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>7-8:</td>
+                                            <td>
+                                                <p>{{ strands.18 and strands.18|replace(strands.18, dG9n10.4) and dG9n10.4|replace('Identify', strands.23) or '' }}</p>
+                                                <p>{{ strands.19 and strands.19|replace(strands.19, dG9n10.9) or '' }}</p>
+                                                <p>{{ strands.20 and strands.20|replace(strands.20, dG9n10.14) or '' }}</p>
+                                                <p>{{ strands.21 and strands.21|replace(strands.21, dG9n10.19) or '' }}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        {% else %}
+                                        <p>This criterion is not assessed. If it applies to all criteria, please consider removing this entry to free space for
+                                            another great work.</p>
+                                        {% endif %}
+                                    
+                                    {% else %}
+                                        <p>This MYP Year is not assessed. Please consider removing this entry to free space for
+                                        another great work.</p>
+                                    
+                                    {% endif %}
+
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <tfoot>
+                        <tr>
+                            <td style="padding: 10px"><b>Actions:</b></td>
+                    
+                            <td>
+                    
+                                <!--
+                                    Remove One G.R.A.S.P.S. Framework 
+                                -->
+                    
+                                <form action="/deleteCriterion" method="POST" style="padding: 10px">
+                    
+                                    <!-- The user is asked to confirm the table's ID. -->
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="c_id" name="c_id" autocomplete="off">
+                                        <label for="c_id">Criterion's ID: {{ strands.25 }}. Please, confirm ID below to <b>remove
+                                                it</b>.</label>
+                                    </div>
+                    
+                                    <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                                        <button type="submit" class="btn btn-danger">Remove Criterion</button>
+                                    </div>
+                                </form>
+                    
+                                <!--
+                                    Delete All G.R.A.S.P.S. Frameworks                             
+                                -->
+                    
+                                <div class="d-grid gap-2 col-6 mx-auto" style="padding: 10px">
+                                    <p>Delete All C button deletes every criterion from your database.</p>
+                                    <a href="/deleteAllC" class="btn btn-danger" role="button">Delete All C</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                
+                </details>  
+                                
+                {% endfor %}
+                
+                &nbsp;
+    
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
